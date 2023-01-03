@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<title>Food Star - React Native App Template Documentation</title>
+	<meta name="description" content="">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet'>
+
+	<!-- Syntax Highlighter -->
+	<link rel="stylesheet" type="text/css" href="syntax-highlighter/styles/shCore.css" media="all">
+	<link rel="stylesheet" type="text/css" href="syntax-highlighter/styles/shThemeDefault.css" media="all">
+
+	<!-- Font Awesome CSS-->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Normalize/Reset CSS-->
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<!-- Main CSS-->
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body id="welcome">
+
+	<aside class="left-sidebar">
+		<div class="logo">
+			<a href="#welcome">
+				<img src="img/logo.png" alt="">
+			</a>
+		</div>
+		<nav class="left-nav">
+			<ul id="nav">
+				<li class="current"><a href="#welcome">Welcome</a></li>
+				<li><a href="#environment-setup">Environment Setup</a></li>
+				<li><a href="#running-app">Running your app</a></li>
+				<li><a href="#stack-use">Stack We Used</a></li>
+				<li><a href="#credit">Source and Credit</a></li>
+			</ul>
+		</nav>
+	</aside>
+
+	<div id="main-wrapper">
+		<div class="main-content">
+			<section id="welcome">
+				<div class="content-header main">
+					<h1>Food Star React Native App Template</h1>
+				</div>
+				<div class="welcome">
+					<h2 class="twenty">Welcome To Food Star React Native App Template</h2>
+					<p>Firstly, a huge thanks for purchasing this template, your support is truly appreciated!</p>
+					<p>This documentation covers the installation and use of this template and often reveals answers to common
+						problems and issues - read this document thoroughly if you are experiencing any difficulties. If
+						you have any questions that are beyond the scope of this document, feel free to email at
+						<a href="mailto:jcstudio26@gmail.com">jcstudio26@gmail.com</a>.</p>
+				</div>
+				<div class="features">
+					<h3 class="twenty">Template Features</h3>
+					<ul>
+						<li>Built with latest version of React Native, React Navigation and TypeScript</li>
+						<li>Support Dark Theme / Light Theme</li>
+						<li>Tons of amazing components built with pure react native code for the best performance</li>
+						<li>Built-in theming system allow you to easily customize it for your business</li>
+						<li>Clean &amp; Simple Design</li>
+						<li>Fully Responsive Design</li>
+						<li>Seamless Cross-Platform, run smoothly on both iOS and Android</li>
+					</ul>
+				</div>
+			</section>
+			<section class="content-header">
+				<h1>What Inside of Food Star &amp; How to run the source code</h1>
+			</section>
+			<section id="environment-setup">
+				<h2 class="title">Setting up the development environment</h2>
+
+				<h3 class="sub-title">NodeJS</h3>
+				<p>Make sure you have a recent version (8.11 or later) of <a href="https://nodejs.org/en/download/" target="_blank">Node</a> installed globally. 
+					We recommend installing Node and Watchman using Homebrew. Run the following commands in a Terminal after installing Homebrew: 
+					brew install node 
+					brew install watchman 
+					If you have already installed Node on your system, make sure it is Node 8.3 or newer. 
+					Watchman is a tool by Facebook for watching changes in the filesystem. It is highly recommended you install it for better performance.
+				</p>
+
+				<h3 class="sub-title">Yarn</h3>
+				<p>
+					Please follow yarn official install guide. ‌ 
+					<a href="​https://yarnpkg.com/en/docs/install#mac-stable" target="_blank">​https://yarnpkg.com/en/docs/install#mac-stable</a>
+				</p>
+
+				<h3 class="sub-title">Expo CLI</h3>
+				<div class="p-l-20">
+					<p>
+						Expo CLI is a command line app that is the main interface between a developer and Expo tools.Expo CLI also has a web-based GUI that pops up in your web 
+						browser when you start your project — you can use the GUI instead of the command line interface if you're not yet comfortable using a terminal or prefer GUIs, 
+						both have similar capabilities.
+					</p>
+					<p>
+						To install Expo CLI, please open your terminal and run <code>npm install --global expo-cli</code> 
+					</p>
+					<p>
+						Verify that the installation was successful by running <code>expo whoami</code>. You're not logged in yet, so you will see "Not logged in". You can create an account by running 
+						expo register if you like, or if you have one already run expo login, but you also don't need an account to get started.
+					</p>
+				</div>
+
+				<h3 class="sub-title">iOS Development Tools</h3>
+				<div class="p-l-20">
+					<h3 class="sub-title">XCode IDE</h3>
+					<p>
+						The easiest way to install XCode is via the <a href="https://apps.apple.com/us/app/xcode/id497799835" target="_blank">Mac App Store</a>. Installing Xcode will also install the iOS Simulator and all the necessary tools to build your iOS app. 
+						If you have already installed XCode on your system, make sure it is version 9.4 or newer. 		
+					</p>
+					<h3 class="sub-title">Command Line Tools</h3>
+					<p>
+						You will also need to install the XCode Command Line Tools. Open XCode, then choose "Preferences..." from the XCode menu. Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.
+					</p>
+					<img src="img/xcode.png" width="80%" height="100%"/>
+					<h3 class="sub-title">Installing an iOS Simulator in Xcode </h3>
+					<p>
+						To install a simulator, open Xcode > Preferences... and select the Components tab. Select a simulator with the corresponding version of iOS you wish to use. 
+					</p>
+	
+					<h3 class="sub-title">CocoaPods</h3>
+					<p>
+						<a href="https://cocoapods.org/" target="_blank">CocoaPods</a> is built with Ruby and it will be installable with the default Ruby available on macOS. You can use a Ruby Version manager; however, we recommend that you use the standard Ruby available on macOS unless you know what you're doing. 
+						Using the default Ruby install will require you to use sudo when installing gems. (This is only an issue for the duration of the gem installation, though.) 
+						sudo gem install cocoapods 
+						For more information, please visit CocoaPods Getting Started guide. 
+					</p>
+				</div>
+
+				<h3 class="sub-title">Android Development Tools</h3>
+				<div class="p-l-20">
+					<h3 class="sub-title">Java Development Kit </h3>
+					<p>
+						We recommend installing JDK using Homebrew. Run the following commands in a Terminal after installing Homebrew: 
+						brew cask install adoptopenjdk/openjdk/adoptopenjdk8 
+						If you have already installed JDK on your system, make sure it is JDK 8 or newer. 
+					</p>
+					<h3 class="sub-title">Setup Android Development Environment</h3>
+					<ol>
+						<li>Install Android Studio</li>
+						<ul>
+							<li>
+								Download and install <a href="https://developer.android.com/studio/index.html" target="_blank">Android Studio</a>. Choose a "Custom" setup when prompted to select an installation type. Make sure the boxes next to all of the following are checked: 
+							</li>
+							<li>Android SDK</li>
+							<li>Android SDK Platform</li>
+							<li>Performance (Intel ® HAXM) (<a href="https://android-developers.googleblog.com/2018/07/android-emulator-amd-processor-hyper-v.html" target="_blank">See here for AMD or Hyper-V</a>)</li>
+							<li>Android Virtual Device</li>
+							<li>
+								Then, click "Next" to install all of these components. 
+								If the checkboxes are grayed out, you will have a chance to install these components later on. 
+								Once setup has finalized and you're presented with the Welcome screen, proceed to the next step.
+							</li>
+						</ul>
+						<li>Install the Android SDK</li>
+						<p>
+							Android Studio installs the latest Android SDK by default. Building a React Native app with native code, however, requires the Android 9 (Pie) SDK in particular. Additional Android SDKs can be installed through the SDK Manager in Android Studio. 
+							The SDK Manager can be accessed from the "Welcome to Android Studio" screen. Click on "Configure", then select "SDK Manager". 
+						</p>
+						<img src="img/android-studio.png" width="80%" height="100%"/>
+						<p>
+							The SDK Manager can also be found within the Android Studio "Preferences" dialog, under Appearance & Behavior → System Settings → Android SDK. 
+							Select the "SDK Platforms" tab from within the SDK Manager, then check the box next to "Show Package Details" in the bottom right corner. Look for and expand the Android 9 (Pie) entry, then make sure the following items are checked: 
+						</p>
+						<ul>
+							<li>Android SDK Platform 28</li>
+							<li>Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image</li>
+							<li>
+								Next, select the "SDK Tools" tab and check the box next to "Show Package Details" here as well. Look for and expand the "Android SDK Build-Tools" entry, then make sure that 28.0.3 is selected. 
+								Finally, click "Apply" to download and install the Android SDK and related build tools. 
+							</li>
+						</ul>
+						<li>Configure the ANDROID_HOME environment variable</li>
+						<p>
+							The React Native tools require some environment variables to be set up in order to build apps with native code.
+						</p>
+						<p>Add the following lines to your $HOME/.bash_profile or $HOME/.bashrc config file:</p>
+						<ul>
+							<li><code>export ANDROID_HOME=$HOME/Library/Android/sdk</code></li>
+							<li><code>export PATH=$PATH:$ANDROID_HOME/emulator</code></li>
+							<li><code>export PATH=$PATH:$ANDROID_HOME/tools</code></li>
+							<li><code>export PATH=$PATH:$ANDROID_HOME/tools/bin</code></li>
+							<li><code>export PATH=$PATH:$ANDROID_HOME/platform-tools</code></li>
+						</ul>
+						<p><code>.bash_profile</code> is specific to bash. If you're using another shell, you will need to edit the appropriate shell-specific config file.</p>
+						<p>
+							Type  <code>source $HOME/.bash_profile</code> to load the config into your current shell. Verify that ANDROID_HOME has been added to your path by running <code>echo $PATH</code>.
+						</p>
+					</ol>
+				</div>
+			
+				<h3 class="sub-title">
+					Folder Structure
+				</h3>
+				<div class="p-l-20">
+					<h4 class="mini-sub-title">
+						src folder
+					</h4>
+					<div class="p-l-20">
+						<ol>
+							<li>assets</li>
+							<li>components</li>
+							<li>context</li>
+							<li>custom-hooks</li>
+							<li>data</li>
+							<li>styles</li>
+							<li>utils</li>
+						</ol>
+						<p>Now, we will discuss about each and every folders and their tasks.</p>
+						<h4 class="mini-sub-title">
+							assets
+						</h4>
+						<p>
+							In assets folder, you will all of the images are kept on the basis of the specific page.
+						</p>
+						<h4 class="mini-sub-title">
+							data
+						</h4>
+						<p>
+							In data folder, you will find all of the data uses in this template.
+						</p>
+						<h4 class="mini-sub-title">
+							components
+						</h4>
+						<p class="content-list">
+							components folder is most importantly use, you will find all the components used in this template.
+								<ol>
+									<li><b>common</b> -> Components in common folder are context providers and other handy reusable items.</li>
+									<li><b>elements</b> -> We have written these core components to make the developer's life much easier.</li>
+									<li><b>routes</b> -> Here all routing related components like a Tab Navigator and Stack Navigators for each tab page are includded.</li>
+									<li><b>screens</b> -> Here is all the screens we used in our template like Login, Home, Place Detail, Dish Detail, Checkout, Settings etc.</li>
+								</ol>
+						</p>
+						<h4 class="mini-sub-title">
+							context
+						</h4>
+						<p>
+							All the context related components like Auth Context, Cart Context and Theme Context will be here
+						</p>
+						<h4 class="mini-sub-title">
+							custom-hooks
+						</h4>
+						<p>
+							Inside this folder are all the handy reusable custom hooks 
+						</p>
+						<h4 class="mini-sub-title">
+							styles
+						</h4>
+						<p class="content-list">
+							Here all theme styling related functions are includded
+						</p>
+						<h4 class="mini-sub-title">
+							utils
+						</h4>
+						<p class="content-list">
+							Inside this folder are all the util functions like number formatter and google map's custom theme styles
+						</p>
+					</div>
+				</div>
+			</section>
+			<section id="running-app">
+				<h2 class="title">
+					Running your React Native application
+				</h2>
+				<div class="p-l-20">
+					<p>
+						Firstly, inside your React Native project folder, you need to run <code>yarn install</code> to install all the required packages of the apps
+					</p>
+					<h4 class="mini-sub-title">
+						Running on a simulator
+					</h4>
+					<p>
+						Run <code>yarn start</code> or you can also run <code>yarn ios</code> || <code>yarn android</code><br/>
+					</p>
+					<h4 class="mini-sub-title">
+						Running on a device
+					</h4>
+					<p>
+						If you want to run the app on an actual physical iOS/Android device, please follow the instruction 
+						<a href="https://docs.expo.io/get-started/installation/#2-expo-go-app-for-ios-and" target="_blank">Running On Device using Expo Go.</a>
+					</p>
+					<h4 class="mini-sub-title">
+						Running Storybook server
+					</h4>
+					<p>
+						Storybook is a development environment for UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
+					</p>
+					<p>
+						Firstly, you need to run <code>yarn storybook</code> to start the storybook server
+					</p>
+					<p>
+						Then open your browser and go to <a href="http://localhost:7007" target="_blank">http://localhost:7007</a>, it will give you the following screen:
+					</p>
+					<img src="img/storybook-1.png" width="80%" height="100%"/>
+					<p>You'll find that the left-pane of storybook is loading at this time because it's trying to connect to an iOS or Android emulator</p>
+					<p>To see your Storybook stories on the device, you have to start the app for the of your choice (iOS or Android)</p>
+					<p>Now let's try to run the app on a simulator by running <code>yarn android</code> or <code>yarn ios</code></p>
+					<img src="img/storybook-2.png" width="80%" height="100%"/>
+					<p>Now you can see that all the components are loaded in the left-pane of our storybook</p>
+					<p>To play with them, on your simulator, press either of the 3 buttons to login, then select Documentation tab at the bottom </p>
+					<img src="img/storybook.gif" width="80%" height="100%"/>
+					<p>
+						If you play around with this you notice that you can control the view which is being shown in the emulator / simulator from the browser.
+						Neat right! ⭐️ It's a nice feature which makes navigating your component library on a device very fast and easy.
+					</p>
+				</div>
+			</section>
+			<section id="stack-use">
+				<h2 class="title">
+					Main Stacks We Used in Food Star
+				</h2>
+				<ol>
+					<li>Yarn.</li>
+					<li>React Native.</li>
+					<li>Expo.</li>
+					<li>Type Script.</li>
+					<li>Story Book.</li>
+				</ol>
+			</section>
+			<section id="credit">
+				<h2 class="title">Source and Credit</h2>
+				<div class="script-source">
+					<ul>
+						<li><a target="_blank" href="https://yarnpkg.com/">yarn</a></li>
+						<li><a target="_blank" href="https://docs.expo.io/">expo</a></li>
+						<li><a target="_blank" href="https://reactnative.dev/">react-native</a></li>
+						<li><a target="_blank" href="https://www.typescriptlang.org/">typescript</a></li>
+						<li><a target="_blank" href="https://storybook.js.org/">storybook</a></li>
+						<li><a target="_blank" href="https://reactnavigation.org/">react-navigation</a></li>
+						<li><a target="_blank" href="https://github.com/WrathChaos/react-native-bouncy-checkbox">react-native-bouncy-checkbox</a></li>
+						<li><a target="_blank" href="https://github.com/react-native-community/datetimepicker">react-native-community/datetimepicker</a></li>
+						<li><a target="_blank" href="https://github.com/react-native-community/react-native-masked-view">react-native-community/masked-view</a></li>
+						<li><a target="_blank" href="https://github.com/expo/react-native-appearance">react-native-appearance</a></li>
+						<li><a target="_blank" href="https://github.com/retyui/react-native-confirmation-code-field">react-native-confirmation-code-field</a></li>
+						<li><a target="_blank" href="https://github.com/Agontuk/react-native-geolocation-service">react-native-geolocation-service</a></li>
+						<li><a target="_blank" href="https://github.com/software-mansion/react-native-gesture-handler">react-native-gesture-handler</a></li>
+						<li><a target="_blank" href="https://github.com/react-native-community/react-native-maps">react-native-maps</a></li>
+						<li><a target="_blank" href="https://github.com/react-native-community/react-native-modal">react-native-modal</a></li>
+						<li><a target="_blank" href="https://github.com/Monte9/react-native-ratings">react-native-ratings</a></li>
+						<li><a target="_blank" href="https://github.com/software-mansion/react-native-reanimated">react-native-reanimated</a></li>
+						<li><a target="_blank" href="https://github.com/th3rdwave/react-native-safe-area-context">react-native-safe-area-context</a></li>
+						<li><a target="_blank" href="https://github.com/software-mansion/react-native-screens">react-native-screens</a></li>
+						<li><a target="_blank" href="https://github.com/archriss/react-native-snap-carousel">react-native-snap-carousel</a></li>
+						<li><a target="_blank" href="https://github.com/24ark/react-native-step-indicator">react-native-step-indicator</a></li>
+						<li><a target="_blank" href="https://github.com/satya164/react-native-tab-view">react-native-tab-view</a></li>
+						<li><a target="_blank" href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a></li>
+						<li><a target="_blank" href="https://github.com/react-native-async-storage/async-storage">react-native-async-storage/async-storage</a></li>
+						<li><a target="_blank" href="https://github.com/react-native-community/lottie-react-native">lottie-react-native</a></li>
+						<li><a target="_blank" href="http://openexchangerates.github.io/accounting.js/">accounting</a></li>
+						<li><a target="_blank" href="https://github.com/marak/Faker.js/">faker</a></li>
+						<li><a target="_blank" href="https://github.com/airbnb/lottie-ios">lottie-ios</a></li>
+						<li><a target="_blank" href="https://www.flaticon.com/">Flaticon</a></li>
+					</ul>
+				</div>
+				<div class="script-source">
+					<h3>Images used in the preview that you can buy on Envato Elements</h3>
+					<ul>
+						<li><a target="_blank" href="https://elements.envato.com/buddha-bowl-quinoa-salad-with-chicken-and-vegetabl-2G7ZDWE">Buddha bowl quinoa salad with chicken and vegetables on black</a></li>
+						<li><a target="_blank" href="https://elements.envato.com/grilled-pork-steaks-in-frying-pan-on-dark-backgrou-MPE49DG">Grilled pork steaks in frying pan on dark background. Top view, overhead, copy space</a></li>
+						<li><a target="_blank" href="https://elements.envato.com/fresh-pizza-PMBKP2Y">Fresh pizza</a></li>
+						<li><a target="_blank" href="https://elements.envato.com/delicious-hamburger-with-cheese-PFMH36B">Delicious hamburger with cheese</a></li>
+						<li><a target="_blank" href="https://elements.envato.com/fresh-ripe-red-and-yellow-cherry-F6NVGS6">Fresh ripe red and yellow cherry</a></li>
+						<li><a target="_blank" href="https://elements.envato.com/flat-lay-of-healthy-dinner-table-setting-with-vege-P3XMKHB">Flat-lay of healthy dinner table setting with vegetarian appetizers</a></li>
+						<li><a target="_blank" href="https://elements.envato.com/penne-pasta-in-tomato-sauce-with-meat-tomatoes-dec-FU29BDP">Penne pasta in tomato sauce with meat, tomatoes decorated with pea sprouts on a dark table. Top view</a></li>
+					</ul>
+					<h3 class="script-source">Mockup Images used in this project are made by <a href="https://previewed.app/" target="_blank"">previewed.app</a></h3>
+				</div>
+			</section>
+			<footer>
+				Contact @ <a href="mailto:jcstudio26@gmail.com" target="_top">JC Studio</a>
+			</footer>
+		</div>
+	</div>
+
+
+	<!-- Essential JavaScript Libraries
+	==============================================-->
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.nav.js"></script>
+	<script type="text/javascript" src="syntax-highlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="syntax-highlighter/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="syntax-highlighter/scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="syntax-highlighter/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="syntax-highlighter/scripts/shBrushPhp.js"></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.all()
+	</script>
+	<script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+
+</html>
