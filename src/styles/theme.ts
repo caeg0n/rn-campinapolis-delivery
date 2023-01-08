@@ -10,26 +10,26 @@ export const lightTheme = {
   },
 };
 
-// export const darkTheme = {
-//   ...DarkTheme,
-//   colors: {
-//     ...DarkTheme.colors,
-//     primary: '#FC6A57',
-//     secondary: '#ccc',
-//     card: '#282828',
-//     background: '#121212',
-//     border: '#333333',
-//   },
-// };
-
 export const darkTheme = {
-   ...DefaultTheme,
+  ...DarkTheme,
   colors: {
-    ...DefaultTheme.colors,
+    ...DarkTheme.colors,
     primary: '#FC6A57',
-    secondary: '#9b9b9b',
-    text: '#333333',
-    border: '#ededed',
+    secondary: '#ccc',
+    card: '#282828',
+    background: '#121212',
+    border: '#333333',
   },
 };
+
+// export const darkTheme = {
+//    ...DefaultTheme,
+//   colors: {
+//     ...DefaultTheme.colors,
+//     primary: '#FC6A57',
+//     secondary: '#9b9b9b',
+//     text: '#333333',
+//     border: '#ededed',
+//   },
+// };
 

@@ -13,7 +13,6 @@ import AppReviewModal from '@src/components/common/AppReviewModal';
 type HomeProps = {};
 
 const Home: React.FC<HomeProps> = () => {
-
   const [isNavigationTransitionFinished, setIsNavigationTransitionFinished] =
     React.useState(false);
   const scrollViewRef = React.useRef(null);

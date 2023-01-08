@@ -33,7 +33,7 @@ const App = () => {
     appState.current,
   );
   const scheme = useColorScheme();
-  const [currentTheme, setCurrentTheme] = React.useState('dark');
+  const [currentTheme, setCurrentTheme] = React.useState('light');
   const [useSystemTheme, setUseSystemTheme] = React.useState(false);
 
   React.useEffect(() => {
