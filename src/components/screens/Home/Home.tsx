@@ -1,14 +1,26 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
+
+import {SearchBar} from '@src/components/elements';
+import {Alert, TextBase} from 'react-native';
+
+import {useSelector, useDispatch} from 'react-redux';
 import * as React from 'react';
+import {ScrollView, SafeAreaView, InteractionManager} from 'react-native';
+
 import {useFocusEffect, useScrollToTop} from '@react-navigation/native';
-import {ScrollView, SafeAreaView, InteractionManager, Alert, TextBase} from 'react-native';
-import {SearchBar, LoadingIndicator} from '@src/components/elements';
+import AppReviewModal from '@src/components/common/AppReviewModal';
+import {LoadingIndicator} from '@src/components/elements';
+
 import PopularPlaces from './PopularPlaces';
 import RecommendedPlaces from './RecommendedPlaces';
 import MerchantCampaigns from './MerchantCampaigns';
 import PopularCategories from './PopularCategories';
 import HotDeals from './HotDeals';
 import RemarkablePlaces from './RemarkablePlaces';
-import AppReviewModal from '@src/components/common/AppReviewModal';
+
+import { getAllOrganizations } from "../../../redux/actions";
 
 type HomeProps = {};
 
@@ -16,11 +28,14 @@ const Home: React.FC<HomeProps> = () => {
   const [isNavigationTransitionFinished, setIsNavigationTransitionFinished] =
     React.useState(false);
   const scrollViewRef = React.useRef(null);
+  const { all_organizations } = useSelector((state:any) => state.userReducer);
+  const dispatch = useDispatch() as any;
 
   useScrollToTop(scrollViewRef);
 
   useFocusEffect(
     React.useCallback(() => {
+      dispatch(getAllOrganizations());
       const task = InteractionManager.runAfterInteractions(() => {
         setIsNavigationTransitionFinished(true);
       });
@@ -30,8 +45,9 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <SafeAreaView>
-      <ScrollView ref={scrollViewRef} stickyHeaderIndices={[0]}>
-        <SearchBar placeholder="Find places, dishes, restaurants..." />
+      {/* <ScrollView ref={scrollViewRef} stickyHeaderIndices={[0]}> aqui o indice 0 significa que a caixa (searchbar) de pesquisa vai ficar fixa */}
+        <ScrollView ref={scrollViewRef}>
+        {/* <SearchBar placeholder="Find places, dishes, restaurants..." /> */}
         <PopularCategories />
         {isNavigationTransitionFinished ? (
           <>

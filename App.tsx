@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -23,6 +24,9 @@ import AuthProvider from '@src/components/common/AuthProvider/AuthProvider';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {AppReviewConfig} from '@src/constants';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+
+import {Provider} from 'react-redux';
+import {Store, persistor} from './src/redux/store';
 
 const {USES_UNTIL_SHOW} = AppReviewConfig;
 const rootViewflex = 1;
@@ -79,21 +83,23 @@ const App = () => {
 
   return (
     <GestureHandlerRootView style={{flex: rootViewflex}}>
-      <AppearanceProvider>
-        <ThemeContext.Provider
-          value={{
-            theme: currentTheme,
-            useSystemTheme,
-            setTheme: _setTheme,
-            setUseSystemTheme,
-          }}>
-          <AuthProvider>
-            <CartProvider>
-              <RootNavigation />
-            </CartProvider>
-          </AuthProvider>
-        </ThemeContext.Provider>
-      </AppearanceProvider>
+      <Provider store={Store}>
+        <AppearanceProvider>
+          <ThemeContext.Provider
+            value={{
+              theme: currentTheme,
+              useSystemTheme,
+              setTheme: _setTheme,
+              setUseSystemTheme,
+            }}>
+            <AuthProvider>
+              <CartProvider>
+                <RootNavigation />
+              </CartProvider>
+            </AuthProvider>
+          </ThemeContext.Provider>
+        </AppearanceProvider>
+      </Provider>
     </GestureHandlerRootView>
   );
 };

@@ -15,7 +15,7 @@ const PopularCategories: React.FC<PopularCategoriesProps> = () => {
 
   const _onButtonCategoryItemPressed = (name: string) => {
     return () => {
-      navigation.navigate('PlaceListScreen', {title: name});
+      navigation.navigate('PlaceListScreen' as never, {title: name} as never);
     };
   };
 

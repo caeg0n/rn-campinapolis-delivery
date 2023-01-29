@@ -1,3 +1,6 @@
+/* eslint-disable quotes */
+/* eslint-disable prettier/prettier */
+
 module.exports = function (api) {
   api.cache(true);
   return {
@@ -10,6 +13,17 @@ module.exports = function (api) {
           alias: {
             '@src': './src',
           },
+        },
+      ],
+      [
+        "module:react-native-dotenv",
+        {
+          "moduleName": "@env",
+          "path": ".env",
+          "blacklist": null,
+          "whitelist": null,
+          "safe": false,
+          "allowUndefined": true,
         },
       ],
     ],
