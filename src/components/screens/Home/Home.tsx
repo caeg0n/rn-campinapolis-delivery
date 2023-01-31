@@ -20,7 +20,8 @@ import PopularCategories from './PopularCategories';
 import HotDeals from './HotDeals';
 import RemarkablePlaces from './RemarkablePlaces';
 
-import { getAllOrganizations } from "../../../redux/actions";
+import { getAllOrganizations } from '../../../redux/actions';
+import { getAllCategories } from '../../../redux/actions';
 
 type HomeProps = {};
 
@@ -29,6 +30,7 @@ const Home: React.FC<HomeProps> = () => {
     React.useState(false);
   const scrollViewRef = React.useRef(null);
   const { all_organizations } = useSelector((state:any) => state.userReducer);
+  const { all_categories } = useSelector((state:any) => state.userReducer);
   const dispatch = useDispatch() as any;
 
   useScrollToTop(scrollViewRef);
@@ -36,6 +38,7 @@ const Home: React.FC<HomeProps> = () => {
   useFocusEffect(
     React.useCallback(() => {
       dispatch(getAllOrganizations());
+      dispatch(getAllCategories());
       const task = InteractionManager.runAfterInteractions(() => {
         setIsNavigationTransitionFinished(true);
       });
@@ -48,9 +51,9 @@ const Home: React.FC<HomeProps> = () => {
       {/* <ScrollView ref={scrollViewRef} stickyHeaderIndices={[0]}> aqui o indice 0 significa que a caixa (searchbar) de pesquisa vai ficar fixa */}
         <ScrollView ref={scrollViewRef}>
         {/* <SearchBar placeholder="Find places, dishes, restaurants..." /> */}
-        <PopularCategories />
         {isNavigationTransitionFinished ? (
           <>
+            <PopularCategories categories={all_categories}/>
             <PopularPlaces />
             <MerchantCampaigns />
             <RecommendedPlaces />
