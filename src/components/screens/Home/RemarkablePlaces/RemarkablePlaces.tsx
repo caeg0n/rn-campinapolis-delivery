@@ -1,31 +1,47 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import {NewestTab, TrendingTab, TabGenerator} from './Tabs';
+import {FeaturedTab} from './Tabs';
+
+import {useSelector, useDispatch} from 'react-redux';
+import {useState, useEffect} from 'react';
 import * as React from 'react';
 import {Container} from '@src/components/elements';
-import {FeaturedTab, NewestTab, TrendingTab} from './Tabs';
 import {TabView} from '@src/components/elements';
 import styles from './styles';
 import {TabViewData} from '@src/components/elements/TabView/TabView';
+import {getAllOrganizations} from '../../../../redux/actions';
 
-type RemarkablePlacesProps = {};
-
-const tabData: TabViewData = [
-  {key: '0', title: 'Featured', content: FeaturedTab},
-  {
-    key: '1',
-    title: 'Newest',
-    content: NewestTab,
-  },
-  {
-    key: '3',
-    title: 'Trending',
-    content: TrendingTab,
-  },
-];
+type RemarkablePlacesProps = {
+  // organizations: Array<Object>;
+};
 
 const RemarkablePlaces: React.FC<RemarkablePlacesProps> = () => {
+  const {all_organizations} = useSelector((state: any) => state.userReducer);
+  const dispatch = useDispatch() as any;
+  // const [tabData, setTabData] = useState([]);
+  const generateTabData = () => {
+    let TabGeneratorWithProps = () => <TabGenerator org={all_organizations} />;
+    const tabData: TabViewData = [
+      {key: '0', title: 'Featured', content: TabGeneratorWithProps},
+    ];
+    return tabData;
+  };
+
+  // useEffect(() => {
+  //   // dispatch(getAllOrganizations());
+  // }, []);
+
+  // React.useEffect(
+  //   React.useCallback(() => {
+  //     dispatch(getAllOrganizations());
+  //     // setTabData([{key: '0', title: 'Featured', content: FeaturedTab}] as any);
+  //   }, []),
+  // );
+
   return (
     <Container style={styles.container}>
       <TabView
-        tabData={tabData}
+        tabData={generateTabData()}
         tabBarStyle={styles.tabBarStyle}
         isTabBarFullWidth
       />

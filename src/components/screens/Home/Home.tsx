@@ -1,18 +1,15 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 
 import {SearchBar} from '@src/components/elements';
 import {Alert, TextBase} from 'react-native';
-
 import {useSelector, useDispatch} from 'react-redux';
+
 import * as React from 'react';
 import {ScrollView, SafeAreaView, InteractionManager} from 'react-native';
-
 import {useFocusEffect, useScrollToTop} from '@react-navigation/native';
 import AppReviewModal from '@src/components/common/AppReviewModal';
 import {LoadingIndicator} from '@src/components/elements';
-
 import PopularPlaces from './PopularPlaces';
 import RecommendedPlaces from './RecommendedPlaces';
 import MerchantCampaigns from './MerchantCampaigns';
@@ -20,25 +17,17 @@ import PopularCategories from './PopularCategories';
 import HotDeals from './HotDeals';
 import RemarkablePlaces from './RemarkablePlaces';
 
-import { getAllOrganizations } from '../../../redux/actions';
-import { getAllCategories } from '../../../redux/actions';
-
 type HomeProps = {};
 
 const Home: React.FC<HomeProps> = () => {
   const [isNavigationTransitionFinished, setIsNavigationTransitionFinished] =
     React.useState(false);
   const scrollViewRef = React.useRef(null);
-  const { all_organizations } = useSelector((state:any) => state.userReducer);
-  const { all_categories } = useSelector((state:any) => state.userReducer);
-  const dispatch = useDispatch() as any;
 
   useScrollToTop(scrollViewRef);
 
   useFocusEffect(
     React.useCallback(() => {
-      dispatch(getAllOrganizations());
-      dispatch(getAllCategories());
       const task = InteractionManager.runAfterInteractions(() => {
         setIsNavigationTransitionFinished(true);
       });
@@ -53,12 +42,12 @@ const Home: React.FC<HomeProps> = () => {
         {/* <SearchBar placeholder="Find places, dishes, restaurants..." /> */}
         {isNavigationTransitionFinished ? (
           <>
-            <PopularCategories categories={all_categories}/>
+            <PopularCategories />
             <PopularPlaces />
             <MerchantCampaigns />
             <RecommendedPlaces />
             <HotDeals />
-            <RemarkablePlaces />
+            {/* <RemarkablePlaces /> */}
           </>
         ) : (
           <LoadingIndicator size="large" hasMargin />

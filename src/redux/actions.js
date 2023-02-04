@@ -9,7 +9,6 @@ export const SEND_EMERGENCY_MESSAGE = 'SEND_EMERGENCY_MESSAGE';
 export const GET_ALL_ORGANIZATIONS = 'GET_ALL_ORGANIZATIONS';
 export const GET_ALL_CATEGORIES = 'GET_ALL_CATEGORIES';
 
-
 if (__DEV__) {
   var SET_USER_EXPO_TOKEN_URL = DEV_API_BASE + '/update_token';
   var SEND_EMERGENCY_MESSAGE_URL = DEV_API_BASE + '/send_emergency_message';
