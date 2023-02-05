@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
 import {Container} from '@src/components/elements';
 import {Place, mockRemarkablePlace} from '@src/data/mock-places';
@@ -8,7 +9,7 @@ type TabGeneratorProps = {
   org: Array<Object>;
 };
 
-const TabGenerator: React.FC<TabGeneratorProps> = () => {
+const TabGenerator: React.FC<TabGeneratorProps> = ({org}) => {
   return (
     <Container style={styles.tabContent}>
       {mockRemarkablePlace.featured.map((item: Place) => {
