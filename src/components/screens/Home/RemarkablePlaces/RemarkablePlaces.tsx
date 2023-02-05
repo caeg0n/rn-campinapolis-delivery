@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {NewestTab, TrendingTab, TabGenerator} from './Tabs';
 import {FeaturedTab} from './Tabs';
-
-import {useSelector, useDispatch} from 'react-redux';
 import {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+
+import {useSelector} from 'react-redux';
 import * as React from 'react';
 import {Container} from '@src/components/elements';
 import {TabView} from '@src/components/elements';
 import styles from './styles';
 import {TabViewData} from '@src/components/elements/TabView/TabView';
-import {getAllOrganizations} from '../../../../redux/actions';
+// import {getAllOrganizations} from '../../../../redux/actions';
 
 type RemarkablePlacesProps = {
   // organizations: Array<Object>;
@@ -17,7 +18,7 @@ type RemarkablePlacesProps = {
 
 const RemarkablePlaces: React.FC<RemarkablePlacesProps> = () => {
   const {all_organizations} = useSelector((state: any) => state.userReducer);
-  const dispatch = useDispatch() as any;
+  // const dispatch = useDispatch() as any;
   // const [tabData, setTabData] = useState([]);
   const generateTabData = () => {
     let TabGeneratorWithProps = () => <TabGenerator org={all_organizations} />;

@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
+// import {mockCategories} from '@src/data/mock-categories';
+
 import * as React from 'react';
 import {useTheme, useNavigation} from '@react-navigation/native';
 import {Image, View} from 'react-native';
 import {Text, Container, Touchable} from '@src/components/elements';
-// import {mockCategories} from '@src/data/mock-categories';
 import {useSelector, useDispatch} from 'react-redux';
 import { getAllCategories } from '../../../../redux/actions';
 
@@ -22,9 +22,7 @@ const PopularCategories: React.FC<PopularCategoriesProps> = () => {
   } = useTheme();
 
   useEffect(() =>{
-    // React.useCallback(() => {
       dispatch(getAllCategories());
-    // }, []),
   },[dispatch]);
 
   const _onButtonCategoryItemPressed = (name: string) => {

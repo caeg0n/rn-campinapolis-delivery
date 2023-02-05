@@ -26,7 +26,8 @@ import {AppReviewConfig} from '@src/constants';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 import {Provider} from 'react-redux';
-import {Store, persistor} from './src/redux/store';
+// import {Store, persistor} from './src/redux/store';
+import {Store} from './src/redux/store';
 
 const {USES_UNTIL_SHOW} = AppReviewConfig;
 const rootViewflex = 1;

@@ -47,7 +47,7 @@ const Home: React.FC<HomeProps> = () => {
             <MerchantCampaigns />
             <RecommendedPlaces />
             <HotDeals />
-            {/* <RemarkablePlaces /> */}
+            <RemarkablePlaces />
           </>
         ) : (
           <LoadingIndicator size="large" hasMargin />
