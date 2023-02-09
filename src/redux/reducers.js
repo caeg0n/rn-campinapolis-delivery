@@ -6,6 +6,8 @@ import { SET_USER_UUID } from "./actions";
 import { SET_USER_EXPO_TOKEN } from "./actions";
 import { GET_ALL_ORGANIZATIONS } from "./actions";
 import { GET_ALL_CATEGORIES } from "./actions";
+import { GET_ALL_OPENED_ORGANIZATIONS } from "./actions";
+import { GET_ALL_CLOSED_ORGANIZATIONS } from "./actions";
 
 const initialState = {
   name: "",
@@ -15,7 +17,9 @@ const initialState = {
   url_base: "",
   expo_token: "",
   all_organizations:{},
-  all_categories:[]
+  all_categories:[],
+  all_opened_organizations:[],
+  all_closed_organizations:[]
 };
 
 function userReducer(state = initialState, action) {
@@ -30,6 +34,10 @@ function userReducer(state = initialState, action) {
       return { ...state, all_organizations: action.payload };
     case GET_ALL_CATEGORIES:
       return { ...state, all_categories: action.payload };
+    case GET_ALL_OPENED_ORGANIZATIONS:
+      return { ...state, all_opened_organizations: action.payload };
+    case GET_ALL_CLOSED_ORGANIZATIONS:
+      return { ...state, all_closed_organizations: action.payload };
     default:
       return state;
   }

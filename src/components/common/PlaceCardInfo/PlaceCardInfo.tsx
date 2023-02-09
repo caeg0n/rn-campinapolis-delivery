@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
 import {View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
@@ -29,15 +30,22 @@ const PlaceCardInfo: React.FC<PlaceCardInfoProps> = ({
         />
       </View>
       <View style={styles.buttonContainer}>
-        <Button
+        {/* <Button
           style={[styles.button, {backgroundColor: border}]}
-          icon={<Icon isPrimary name="map-marker-alt" size={10} />}>
-          <Text isPrimary style={styles.buttonText}>{`${distance}m`}</Text>
+          icon={<Icon isPrimary name="money-bill" size={10} />}>
+          <Text isPrimary style={styles.buttonText}>{`pedido minimo ${distance}m`}</Text>
         </Button>
         <Button
           style={[styles.button, {backgroundColor: border}]}
           icon={<Icon isPrimary name="clock" size={10} />}>
           <Text isPrimary style={styles.buttonText}>{`${time}'`}</Text>
+        </Button> */}
+        <Button
+          style={[styles.button, {backgroundColor: border}]}
+          icon={<Icon isPrimary name="motorcycle" size={10} />}>
+          <Text isPrimary style={styles.buttonText}>
+            {'frete R$2.50'}
+          </Text>
         </Button>
       </View>
     </View>

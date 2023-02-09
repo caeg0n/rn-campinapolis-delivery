@@ -2,12 +2,12 @@ import * as React from 'react';
 import {Image, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Container, Text, Touchable} from '@src/components/elements';
-import {Place} from '@src/data/mock-places';
+// import {Place} from '@src/data/mock-places';
 import styles from './styles';
 import PlaceCardInfo from '../PlaceCardInfo';
 
 type PlaceListItemProps = {
-  data: Place;
+  data: any;
 };
 
 const PlaceListItem: React.FC<PlaceListItemProps> = ({data}) => {
@@ -15,13 +15,14 @@ const PlaceListItem: React.FC<PlaceListItemProps> = ({data}) => {
   const navigation = useNavigation();
 
   const _onPlaceItemPressed = () => {
-    navigation.navigate('PlaceDetailsScreen');
+    navigation.navigate('PlaceDetailsScreen' as any);
   };
 
   return (
     <Touchable onPress={_onPlaceItemPressed}>
       <Container style={styles.container}>
-        <Image style={styles.image} source={image} />
+        {/* <Image style={styles.image} source={image} /> */}
+        <Image source={{uri: image as string}} style={styles.image} />
         <View style={styles.placeInfoContainer}>
           <View style={styles.placeInfo}>
             <Text style={styles.placeTitle}>{title}</Text>

@@ -1,18 +1,22 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
+// import {Place, mockRemarkablePlace} from '@src/data/mock-places';
 import {Container} from '@src/components/elements';
-import {Place, mockRemarkablePlace} from '@src/data/mock-places';
 import PlaceListItem from '@src/components/common/PlaceListItem';
 import styles from './styles';
 
 type TabGeneratorProps = {
-  org: Array<Object>;
+  organizations: Array<Object>;
 };
 
-const TabGenerator: React.FC<TabGeneratorProps> = ({org}) => {
+const TabGenerator: React.FC<TabGeneratorProps> = ({organizations}) => {
   return (
+    // <Container style={styles.tabContent}>
+    //   {mockRemarkablePlace.featured.map((item: Place) => {
+    //     return <PlaceListItem key={item.id} data={item} />;
+    //   })}
+    // </Container>
     <Container style={styles.tabContent}>
-      {mockRemarkablePlace.featured.map((item: Place) => {
+      {organizations.map((item: any) => {
         return <PlaceListItem key={item.id} data={item} />;
       })}
     </Container>

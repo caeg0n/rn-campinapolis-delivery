@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 
@@ -37,9 +38,9 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <SafeAreaView>
-      {/* <ScrollView ref={scrollViewRef} stickyHeaderIndices={[0]}> aqui o indice 0 significa que a caixa (searchbar) de pesquisa vai ficar fixa */}
-        <ScrollView ref={scrollViewRef}>
-        {/* <SearchBar placeholder="Find places, dishes, restaurants..." /> */}
+      <ScrollView ref={scrollViewRef} stickyHeaderIndices={[0]}>
+        {/* <ScrollView ref={scrollViewRef} style={{flex: 1}}> */}
+        <SearchBar placeholder="Find places, dishes, restaurants..." />
         {isNavigationTransitionFinished ? (
           <>
             <PopularCategories />

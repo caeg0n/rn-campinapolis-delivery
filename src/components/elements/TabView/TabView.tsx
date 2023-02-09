@@ -19,7 +19,7 @@ type TabViewItem = {
 export type TabViewData = TabViewItem[];
 
 type TabViewProps = {
-  tabData: TabViewData;
+  tabData: any;
   onTabIndexChange?: (index: number) => {};
   isTabBarFullWidth?: boolean;
   tabBarStyle?: StyleProp<ViewStyle>;
