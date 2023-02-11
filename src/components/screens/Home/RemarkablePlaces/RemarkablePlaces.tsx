@@ -1,3 +1,5 @@
+/* eslint-disable no-const-assign */
+/* eslint-disable eqeqeq */
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -21,15 +23,32 @@ import styles from './styles';
 type RemarkablePlacesProps = {};
 
 const RemarkablePlaces: React.FC<RemarkablePlacesProps> = () => {
+  const [x, setX] = React.useState(0);
+  let minHeight = 500;
+  const dispatch = useDispatch() as any;
   const {all_opened_organizations} = useSelector(
     (state: any) => state.userReducer,
   );
   const {all_closed_organizations} = useSelector(
     (state: any) => state.userReducer,
   );
-  const dispatch = useDispatch() as any;
-  const closedListHeight = all_closed_organizations.length * 96;
-  const openedListHeight = all_opened_organizations.length * 96;
+  if (all_opened_organizations > all_closed_organizations) {
+    minHeight = all_opened_organizations.length * 110;
+    if (all_opened_organizations.length > 4) {
+      minHeight = all_opened_organizations.length * 100;
+    }
+  }
+  if (all_closed_organizations > all_opened_organizations) {
+    minHeight = all_closed_organizations.length * 98;
+  }
+
+  useEffect(() => {
+    const s = async () => {
+      await dispatch(getAllOpenedOrganizations());
+      await dispatch(getAllClosedOrganizations());
+    };
+    s();
+  }, [dispatch]);
 
   function generateTabData() {
     let tabData: any = [];
@@ -52,30 +71,21 @@ const RemarkablePlaces: React.FC<RemarkablePlacesProps> = () => {
       content: TabGeneratorWithProps,
     };
     tabData.push(tempData);
-    console.log('4', closedListHeight, openedListHeight);
     return tabData;
   }
 
-  useEffect(() => {
-    dispatch(getAllOpenedOrganizations());
-    dispatch(getAllClosedOrganizations());
-  }, [dispatch]);
+  function updateTabSize(this: any, i) {
+    setX(i);
+  }
 
   return (
-    <Container style={styles.container}>
-      {console.log('***', closedListHeight, openedListHeight)}
-      <Container
-        style={{
-          minHeight: closedListHeight,
-          borderTopLeftRadius: 25,
-          borderTopRightRadius: 25,
-        }}>
-        <TabView
-          tabData={generateTabData()}
-          tabBarStyle={styles.tabBarStyle}
-          isTabBarFullWidth
-        />
-      </Container>
+    <Container style={[styles.container, {minHeight: minHeight}]}>
+      <TabView
+        tabData={generateTabData()}
+        tabBarStyle={styles.tabBarStyle}
+        isTabBarFullWidth
+        resizeTab={updateTabSize}
+      />
     </Container>
   );
 };

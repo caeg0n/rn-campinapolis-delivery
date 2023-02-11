@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
 import {Dimensions, StyleProp, ViewStyle} from 'react-native';
 import {useTheme} from '@react-navigation/native';
@@ -23,6 +24,7 @@ type TabViewProps = {
   onTabIndexChange?: (index: number) => {};
   isTabBarFullWidth?: boolean;
   tabBarStyle?: StyleProp<ViewStyle>;
+  resizeTab: any;
 };
 
 const TabView: React.FC<TabViewProps> = ({
@@ -30,6 +32,7 @@ const TabView: React.FC<TabViewProps> = ({
   onTabIndexChange,
   isTabBarFullWidth,
   tabBarStyle,
+  resizeTab,
 }) => {
   const {
     colors: {card, primary, text},
@@ -78,6 +81,7 @@ const TabView: React.FC<TabViewProps> = ({
           labelStyle={styles.tabBarLabel}
           activeColor={primary}
           inactiveColor={text}
+          onTabPress={resizeTab}
           tabStyle={
             isTabBarFullWidth
               ? {
@@ -93,7 +97,10 @@ const TabView: React.FC<TabViewProps> = ({
       )}
       renderScene={SceneMap(scenes)}
       onIndexChange={onIndexChange}
-      initialLayout={{width: Dimensions.get('window').width, height: 0}}
+      initialLayout={{
+        width: Dimensions.get('window').width,
+        height: 0,
+      }}
     />
   );
 };
