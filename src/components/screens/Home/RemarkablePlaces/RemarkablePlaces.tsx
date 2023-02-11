@@ -1,22 +1,16 @@
-/* eslint-disable no-const-assign */
-/* eslint-disable eqeqeq */
-/* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/jsx-no-duplicate-props */
-/* eslint-disable react-native/no-inline-styles */
 // import {NewestTab, TrendingTab} from './Tabs';
 // import {FeaturedTab} from './Tabs';
 // import {useState} from 'react';
 
 import * as React from 'react';
 import {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
-import {useSelector} from 'react-redux';
-import {Container} from '@src/components/elements';
-import {TabView} from '@src/components/elements';
-import {getAllOpenedOrganizations} from '../../../../redux/actions';
-import {getAllClosedOrganizations} from '../../../../redux/actions';
+import {useDispatch, useSelector} from 'react-redux';
+import {Container, TabView} from '@src/components/elements';
+import {
+  getAllOpenedOrganizations,
+  getAllClosedOrganizations,
+} from '../../../../redux/actions';
 import {TabGenerator} from './Tabs';
 import styles from './styles';
 

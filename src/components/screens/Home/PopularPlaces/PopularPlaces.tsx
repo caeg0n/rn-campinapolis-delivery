@@ -1,37 +1,57 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-shadow */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// import {mockPlaces, Place} from '@src/data/mock-places';
+
+import {getMostPopular} from '../../../../redux/actions';
 import * as React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Carousel, Section, Card} from '@src/components/elements';
 import {Dimensions} from 'react-native';
-import {mockPlaces, Place} from '@src/data/mock-places';
 import PlaceCardInfo from '@src/components/common/PlaceCardInfo';
+import {useDispatch, useSelector} from 'react-redux';
+import {Place} from '@src/data/mock-places';
 
 type PopularPlacesProps = {};
 
 const PopularPlaces: React.FC<PopularPlacesProps> = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch() as any;
+  const {most_popular} = useSelector((state: any) => state.userReducer);
+
+  React.useEffect(() => {
+    dispatch(getMostPopular());
+  }, [dispatch]);
 
   const _onButtonActionPressed = () => {
-    navigation.navigate('PlaceListScreen', {title: 'Popular Near You'});
+    navigation.navigate(
+      'PlaceListScreen' as never,
+      {title: 'Popular Near You'} as never,
+    );
   };
 
   const _onPlaceItemPressed = () => {
-    navigation.navigate('PlaceDetailsScreen');
+    navigation.navigate('PlaceDetailsScreen' as any);
   };
+
+  function generateCarouselData(): Place[] {
+    return most_popular;
+  }
 
   return (
     <Section
-      title="Popular Near You"
-      actionButtonText="View more"
+      title="Mais Populares"
+      actionButtonText="Mostrar mais"
       onButtonActionPressed={_onButtonActionPressed}>
       <Carousel
-        data={mockPlaces}
+        data={generateCarouselData()}
         hasParallaxImages
         itemWidth={Dimensions.get('window').width - 50}
         renderContent={(item: Place, index, parallaxProps) => {
           const {image, title, subTitle} = item;
           return (
             <Card
-              coverImage={image}
+              coverImage={{uri: image as string}}
               title={title}
               subTitle={subTitle}
               parallaxProps={parallaxProps}

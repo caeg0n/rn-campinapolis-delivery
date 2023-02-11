@@ -8,6 +8,7 @@ import { GET_ALL_ORGANIZATIONS } from "./actions";
 import { GET_ALL_CATEGORIES } from "./actions";
 import { GET_ALL_OPENED_ORGANIZATIONS } from "./actions";
 import { GET_ALL_CLOSED_ORGANIZATIONS } from "./actions";
+import { GET_MOST_POPULAR } from "./actions";
 
 const initialState = {
   name: "",
@@ -19,7 +20,8 @@ const initialState = {
   all_organizations:{},
   all_categories:[],
   all_opened_organizations:[],
-  all_closed_organizations:[]
+  all_closed_organizations:[],
+  most_popular:[]
 };
 
 function userReducer(state = initialState, action) {
@@ -38,6 +40,8 @@ function userReducer(state = initialState, action) {
       return { ...state, all_opened_organizations: action.payload };
     case GET_ALL_CLOSED_ORGANIZATIONS:
       return { ...state, all_closed_organizations: action.payload };
+    case GET_MOST_POPULAR:
+      return { ...state, most_popular: action.payload };
     default:
       return state;
   }

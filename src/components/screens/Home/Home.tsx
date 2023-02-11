@@ -48,7 +48,6 @@ const Home: React.FC<HomeProps> = () => {
             <MerchantCampaigns />
             <RecommendedPlaces />
             <HotDeals />
-            {console.log('######')}
             <RemarkablePlaces />
           </>
         ) : (
