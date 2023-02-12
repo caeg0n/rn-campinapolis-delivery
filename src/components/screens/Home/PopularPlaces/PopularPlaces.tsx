@@ -2,6 +2,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // import {mockPlaces, Place} from '@src/data/mock-places';
+// import {Place} from '@src/data/mock-places';
 
 import {getMostPopular} from '../../../../redux/actions';
 import * as React from 'react';
@@ -10,7 +11,18 @@ import {Carousel, Section, Card} from '@src/components/elements';
 import {Dimensions} from 'react-native';
 import PlaceCardInfo from '@src/components/common/PlaceCardInfo';
 import {useDispatch, useSelector} from 'react-redux';
-import {Place} from '@src/data/mock-places';
+
+type Place = {
+  id: string;
+  title: string;
+  coverImage?: string;
+  image: string;
+  subTitle: string;
+  distance: number;
+  time: number;
+  rating: number;
+  dishSection?: string;
+};
 
 type PopularPlacesProps = {};
 

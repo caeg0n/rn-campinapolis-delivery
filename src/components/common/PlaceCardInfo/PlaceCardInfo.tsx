@@ -1,10 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+// import {Place} from '@src/data/mock-places';
+
 import * as React from 'react';
 import {View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {Rating, Button, Icon, Text} from '@src/components/elements';
-import {Place} from '@src/data/mock-places';
 import styles from './styles';
+
+type Place = {
+  id: string;
+  title: string;
+  coverImage?: string;
+  image: string;
+  subTitle: string;
+  distance: number;
+  time: number;
+  rating: number;
+  dishSection?: string;
+};
 
 type PlaceCardInfoProps = {
   data: Place;
