@@ -21,6 +21,7 @@ import RemarkablePlaces from './RemarkablePlaces';
 type HomeProps = {};
 
 const Home: React.FC<HomeProps> = () => {
+  console.log('INICIO');
   const [isNavigationTransitionFinished, setIsNavigationTransitionFinished] =
     React.useState(false);
   const scrollViewRef = React.useRef(null);
@@ -29,6 +30,7 @@ const Home: React.FC<HomeProps> = () => {
 
   useFocusEffect(
     React.useCallback(() => {
+      console.log('USEEFFECT');
       const task = InteractionManager.runAfterInteractions(() => {
         setIsNavigationTransitionFinished(true);
       });
@@ -38,6 +40,7 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <SafeAreaView>
+      {console.log('RETURN')}
       <ScrollView ref={scrollViewRef} stickyHeaderIndices={[0]}>
         {/* <ScrollView ref={scrollViewRef} style={{flex: 1}}> */}
         <SearchBar placeholder="Find places, dishes, restaurants..." />

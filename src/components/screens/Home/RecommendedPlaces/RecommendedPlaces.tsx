@@ -43,17 +43,13 @@ const RecommendedPlaces: React.FC<RecommendedPlacesProps> = () => {
     navigation.navigate('PlaceDetailsScreen' as never);
   };
 
-  function recommendedPlaces(): Place[] {
-    return recommended_places;
-  }
-
   return (
     <Section
       title="Recommended"
       actionButtonText="View more"
       onButtonActionPressed={_onButtonActionPressed}>
       <Carousel
-        data={recommendedPlaces()}
+        data={recommended_places}
         itemWidth={Dimensions.get('window').width / 2 - 15}
         renderContent={(item: Place, index, parallaxProps) => {
           const {image, title, subTitle} = item;

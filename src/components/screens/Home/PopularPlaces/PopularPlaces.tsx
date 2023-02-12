@@ -46,17 +46,13 @@ const PopularPlaces: React.FC<PopularPlacesProps> = () => {
     navigation.navigate('PlaceDetailsScreen' as any);
   };
 
-  function generateCarouselData(): Place[] {
-    return most_popular;
-  }
-
   return (
     <Section
       title="Mais Populares"
       actionButtonText="Mostrar mais"
       onButtonActionPressed={_onButtonActionPressed}>
       <Carousel
-        data={generateCarouselData()}
+        data={most_popular}
         hasParallaxImages
         itemWidth={Dimensions.get('window').width - 50}
         renderContent={(item: Place, index, parallaxProps) => {
