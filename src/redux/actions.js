@@ -10,6 +10,7 @@ export const GET_ALL_OPENED_ORGANIZATIONS = 'GET_ALL_OPENED_ORGANIZATIONS';
 export const GET_ALL_CLOSED_ORGANIZATIONS = 'GET_ALL_CLOSED_ORGANIZATIONS';
 export const GET_MOST_POPULAR = 'GET_MOST_POPULAR';
 export const GET_RECOMMENDED_PLACES = 'GET_RECOMMENDED_PLACES';
+export const GET_HOT_DEALS = 'GET_HOT_DEALS';
 
 if (__DEV__) {
   var SET_USER_EXPO_TOKEN_URL = DEV_API_BASE + '/update_token';
@@ -23,6 +24,7 @@ if (__DEV__) {
     DEV_API_BASE + '/get_all_closed_organizations';
   var GET_MOST_POPULAR_URL = DEV_API_BASE + '/get_most_popular/5';
   var GET_RECOMMENDED_PLACES_URL = DEV_API_BASE + '/get_recommended_places';
+  var GET_HOT_DEALS_URL = DEV_API_BASE + '/get_hot_deals';
 } else {
   var SET_USER_EXPO_TOKEN_URL = PROD_API_BASE + '/update_token';
   var SEND_EMERGENCY_MESSAGE_URL = PROD_API_BASE + '/send_emergency_message';
@@ -35,6 +37,7 @@ if (__DEV__) {
     DEV_API_BASE + '/get_all_closed_organizations';
   var GET_MOST_POPULAR_URL = DEV_API_BASE + '/get_most_popular/5';
   var GET_RECOMMENDED_PLACES_URL = DEV_API_BASE + '/get_recommended_places';
+  var GET_HOT_DEALS_URL = DEV_API_BASE + '/get_hot_deals';
 }
 
 export const getAllOrganizations = () => {
@@ -102,6 +105,32 @@ export const getRecommendedPlaces = () => {
       if (json) {
         dispatch({
           type: GET_RECOMMENDED_PLACES,
+          payload: json,
+        });
+      } else {
+        console.log('unable to fectch get_most_popular');
+      }
+    };
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getHotDeals = () => {
+  const url = GET_HOT_DEALS_URL + '.json';
+  try {
+    return async (dispatch) => {
+      const result = await fetch(url, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      });
+      const json = await result.json();
+      if (json) {
+        dispatch({
+          type: GET_HOT_DEALS,
           payload: json,
         });
       } else {

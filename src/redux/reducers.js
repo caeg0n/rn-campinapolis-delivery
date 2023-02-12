@@ -10,6 +10,7 @@ import { GET_ALL_OPENED_ORGANIZATIONS } from "./actions";
 import { GET_ALL_CLOSED_ORGANIZATIONS } from "./actions";
 import { GET_MOST_POPULAR } from "./actions";
 import { GET_RECOMMENDED_PLACES } from "./actions";
+import { GET_HOT_DEALS } from "./actions";
 
 const initialState = {
   name: "",
@@ -23,7 +24,8 @@ const initialState = {
   all_opened_organizations:[],
   all_closed_organizations:[],
   most_popular:[],
-  recommended_places:[]
+  recommended_places:[],
+  hot_deals:[]
 };
 
 function userReducer(state = initialState, action) {
@@ -46,6 +48,8 @@ function userReducer(state = initialState, action) {
       return { ...state, most_popular: action.payload };
     case GET_RECOMMENDED_PLACES:
       return { ...state, recommended_places: action.payload };
+    case GET_HOT_DEALS:
+      return { ...state, hot_deals: action.payload };
     default:
       return state;
   }

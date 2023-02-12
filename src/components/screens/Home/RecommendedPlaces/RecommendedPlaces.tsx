@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // import {mockPlaces, Place} from '@src/data/mock-places';
 import * as React from 'react';
@@ -30,7 +31,7 @@ const RecommendedPlaces: React.FC<RecommendedPlacesProps> = () => {
 
   useEffect(() => {
     dispatch(getRecommendedPlaces());
-  }, [dispatch]);
+  }, []);
 
   const _onButtonActionPressed = () => {
     navigation.navigate(
